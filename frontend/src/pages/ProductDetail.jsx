@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProductBySlug } from "../features/products/productApi"; // make sure the file casing is correct!
+import { getProductBySlug } from "../features/products/productAPI.js"; // make sure the file casing is correct!
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, openCart } from "../features/cart/cartSlice";
+import { addToCart, openCart } from "../features/cart/cartSlice.js";
 import toast from "react-hot-toast";
 
 const ProductDetail = () => {
