@@ -17,8 +17,7 @@ const ProductDetail = () => {
     const [qty, setQty] = useState(1);
     const [added, setAdded] = useState(false);
 
-    const cartQty = cart.find(item => item._id === product._id)?.qty || 0;
-
+    const cartQty = cart.find(item => item._id === product?._id)?.qty || 0;
     // =================== FETCH PRODUCT ===================
     useEffect(() => {
         if (!slug) return; // prevent undefined
@@ -67,10 +66,6 @@ const ProductDetail = () => {
             return;
         }
 
-        if (product.countInStock === 0) {
-            toast.error("Out of stock!")
-            return;
-        }
 
         // If product has variants, make sure user selected one
         if (product.variants?.length > 0 && !selectedVariant) {
